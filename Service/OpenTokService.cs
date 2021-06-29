@@ -11,22 +11,15 @@ namespace Service
 {
     public class OpenTokService
     {
-
-
         private readonly IConfiguration _configuration;
-
-        public OpenTokService(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-
         public Session Session { get; protected set; }
         public OpenTok OpenTok { get; protected set; }
 
         
 
-        public void InitSessionOpenTok()
+        public OpenTokService(IConfiguration configuration)
         {
+            _configuration = configuration;
             int apiKey = 0;
             string apiSecret = null;
             try

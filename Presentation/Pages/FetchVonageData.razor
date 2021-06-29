@@ -1,0 +1,38 @@
+﻿@page "/fetchdataVonage"
+
+@using Service
+@inject OpenTokService OpenTokService
+@inject IJSRuntime JSRuntime
+
+
+@if (OpenTokService == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+        <div id="subscriber"></div>
+        <div id="publisher"></div>
+
+}
+
+@code {
+    private string ApiKey;
+    private string SessionId;
+    private string Token;
+    protected override async Task OnInitializedAsync()
+    {
+        ApiKey = OpenTokService.OpenTok.ApiKey.ToString();
+        SessionId = OpenTokService.Session.Id;
+        Token = OpenTokService.Session.GenerateToken();
+
+        await JSRuntime.InvokeVoidAsync("setVariables", ApiKey, SessionId, Token);
+        await JSRuntime.InvokeVoidAsync("alerta");
+        await JSRuntime.InvokeVoidAsync("initApp");
+
+        //await JSRuntime.InvokeVoidAsync("setVariables", ApiKey, SessionId, Token);
+        // await JSRuntime.InvokeVoidAsync("initApp");
+
+
+    }
+}
