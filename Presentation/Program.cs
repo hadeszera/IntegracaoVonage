@@ -21,6 +21,7 @@ namespace Presentation
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("https://localhost:5002", "https://localhost:5003", "https://192.168.0.14:5000");
                 });
     }
 }
