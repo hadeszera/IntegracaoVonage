@@ -30,3 +30,20 @@ body, html {
     border: 3px solid white;
     border-radius: 3px;
 }
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    width: 1200px;
+    height: 600px;
+}
+
+.screen-share {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.hidden {
+    display: none;
+}

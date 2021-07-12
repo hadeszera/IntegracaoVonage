@@ -11,8 +11,15 @@
 }
 else
 {
-        <div id="subscriber"></div>
-        <div id="publisher"></div>
+    <button id="startScreenShare" class="screen-share">Share Screen</button>
+    <button id="stopScreenShare" class="screen-share hidden">Stop Sharing Screen</button>
+    <div id="subscriber"></div>
+    <div id="publisher"></div>
+    <div id="screen" class="screen"></div>
+
+
+
+
 
 }
 
@@ -29,10 +36,6 @@ else
         await JSRuntime.InvokeVoidAsync("setVariables", ApiKey, SessionId, Token);
         await JSRuntime.InvokeVoidAsync("alerta");
         await JSRuntime.InvokeVoidAsync("initApp");
-
-        //await JSRuntime.InvokeVoidAsync("setVariables", ApiKey, SessionId, Token);
-        // await JSRuntime.InvokeVoidAsync("initApp");
-
-
+        await JSRuntime.InvokeVoidAsync("setScreenSharing");
     }
 }

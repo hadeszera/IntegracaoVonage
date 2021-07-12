@@ -26,6 +26,7 @@ namespace Presentation
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<OpenTokService>();
@@ -44,7 +45,11 @@ namespace Presentation
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseCors(option => option
+              .AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+          );
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -52,8 +57,9 @@ namespace Presentation
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapControllers();
+                //endpoints.MapBlazorHub();
+                //endpoints.MapFallbackToPage("/_Host");
             });
         }
     }
