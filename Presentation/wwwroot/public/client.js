@@ -48,8 +48,8 @@ function initiateSessionListeners(session) {
       streamContainer,
       {
         insertMode: "append",
-        width: "100%",
-        height: "100%"
+        width: "50%",
+        height: "50%"
       },
       handleScreenShare(event.stream.videoType)
     );

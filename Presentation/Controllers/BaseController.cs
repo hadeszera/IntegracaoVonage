@@ -19,7 +19,6 @@ namespace Presentation.Controllers
                 apiKey =  openTokService.OpenTok.ApiKey.ToString(),
                 sessionId = openTokService.Session.Id,
                 token = openTokService.Session.GenerateToken()
-
             });        
         }
     }
