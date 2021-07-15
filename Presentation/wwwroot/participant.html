@@ -21,17 +21,16 @@
 
   <body>
       <header>
-          <h1>Tela das Salas</h1>
+          <h1>Tela de participante</h1>
       </header>
+
       <main>
-          <h2 class="center">
-              <a  href="https://localhost:5002/host.html"><b>Sala do Host </b> </a></h2>
-              <ul class="center" id="slideContainer"></ul>
-
-</main>
+          <div id="screen" class="screen"></div>
+          <div id="subscriber" class="subscriber"></div>
+          <div id="publisher" class="publisher"></div>
 
 
-
+      </main>
       <footer>
           <p>
               <small>
@@ -40,6 +39,8 @@
               </small>
           </p>
       </footer>
-      <script src="/public/home.js"></script>
+
+      <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+      <script src="/public/client.js"></script>
   </body>
 </html>
