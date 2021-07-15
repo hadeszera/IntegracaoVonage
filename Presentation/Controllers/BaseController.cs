@@ -21,5 +21,21 @@ namespace Presentation.Controllers
                 token = openTokService.Session.GenerateToken()
             });        
         }
+
+        [HttpPost("listAllActiveRooms")]
+        public IActionResult ResultListActiveRooms()
+        {
+            List<object> list = new List<object>();
+            list.Add(new { RoomName = "Sala  1" });
+            list.Add(new { RoomName = "Sala  2" });
+            list.Add(new { RoomName = "Sala  3" });
+            list.Add(new { RoomName = "Sala  4" });
+            list.Add(new { RoomName = "Sala  5" });
+
+            return Ok(list);
+        }
+
+
+
     }
 }
